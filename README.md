@@ -89,3 +89,4 @@ src/
    ```
    expo start
    ```
+4. install expo go in android device and scan the bar code in terminal from expo go app in your device.
