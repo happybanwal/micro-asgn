@@ -1,32 +1,36 @@
-import React from 'react'
-import { createNativeStackNavigator } from '@react-navigation/native-stack';
+import React from 'react';
 import { NavigationContainer } from '@react-navigation/native';
-import SearchScreen from './src/screens/SearchScreen';
-import ProfileScreen from './src/screens/ProfileScreen';
-import ListScreen from './src/screens/ListScreen';
+import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import { StatusBar } from 'expo-status-bar';
+import { RootStackParamList } from './src/navigation/types';
+
+// Screens
+import SearchScreen from './src/screens/SearchScreen';
+import UserProfileScreen from './src/screens/UserProfileScreen';
+import FollowersScreen from './src/screens/FollowersScreen';
+import FollowingScreen from './src/screens/FollowingScreen';
+
+const Stack = createNativeStackNavigator<RootStackParamList>();
 
 export default function App() {
-
-  const Stack = createNativeStackNavigator();
-
   return (
-    <>
-    <StatusBar style="light" backgroundColor="#121212" translucent={true} />
     <NavigationContainer>
-      <Stack.Navigator initialRouteName='Search'>
-        <Stack.Screen 
-        name="Search" 
-        options={{
+      <StatusBar style="light" />
+      <Stack.Navigator
+        initialRouteName="Search"
+        screenOptions={{
           headerShown: false,
+          
+          contentStyle: {
+            backgroundColor: '#121212',
+          },
         }}
-        component={SearchScreen} />
-        <Stack.Screen name="Profile" component={ProfileScreen} />
-        <Stack.Screen name="List" component={ListScreen} />
+      >
+        <Stack.Screen name="Search" component={SearchScreen} />
+        <Stack.Screen name="UserProfile" component={UserProfileScreen} />
+        <Stack.Screen name="Followers" component={FollowersScreen} />
+        <Stack.Screen name="Following" component={FollowingScreen} />
       </Stack.Navigator>
     </NavigationContainer>
-    </>
-    
-  )
+  );
 }
-
