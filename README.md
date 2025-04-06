@@ -1,65 +1,91 @@
-# Starter Template with React Navigation
+# GitHub User Search App
 
-This is a minimal starter template for React Native apps using Expo and React Navigation.
+## Project Overview
 
-It includes the following:
+This is a React Native mobile application that allows users to search for GitHub profiles, view user details, followers, and following lists. The app provides a simple, intuitive interface to explore GitHub user information.
 
-- Example [Native Stack](https://reactnavigation.org/docs/native-stack-navigator) with a nested [Bottom Tab](https://reactnavigation.org/docs/bottom-tab-navigator)
-- Web support with [React Native for Web](https://necolas.github.io/react-native-web/)
-- TypeScript support and configured for React Navigation
-- Automatic deep link and URL handling configuration
-- Expo [Development Build](https://docs.expo.dev/develop/development-builds/introduction/) with [Continuous Native Generation](https://docs.expo.dev/workflow/continuous-native-generation/)
-- Edge-to-edge configured on Android with [`react-native-edge-to-edge`](https://www.npmjs.com/package/react-native-edge-to-edge)
+## Features
+
+### 1. User Search
+- Search for GitHub users by username
+- Handles cases where:
+  * User is found
+  * User is not found
+  * Search input is empty
+
+### 2. User Profile View
+When a user is found, the app displays:
+- Avatar
+- Username
+- Name
+- Bio/Description
+- Follower count
+- Following count
+
+### 3. Followers and Following Lists
+- Navigate to followers list by tapping follower count
+- Navigate to following list by tapping following count
+- Each user in these lists can be tapped to view their profile
+
+### 4. Navigation
+- Back button functionality in all screens
+- Smooth navigation between different views
+
+## Bonus Features Implemented
+- Pull to refresh in followers and following lists
+- Error handling with informative messages
+- Responsive design
+
+## Tech Stack
+- React Native
+- TypeScript
+- Expo
+- React Navigation
+- Tailwind CSS (via twrnc)
+- GitHub API
+
+## Project Structure
+```
+src/
+├── components/
+│   ├── TopBar.tsx         # Reusable top navigation bar
+│   └── UserListItem.tsx   # Reusable user list item component
+├── screens/
+│   ├── SearchScreen.tsx    # Main search screen
+│   ├── UserProfileScreen.tsx  # User profile details screen
+│   ├── FollowersScreen.tsx    # User followers list screen
+│   └── FollowingScreen.tsx    # Users being followed list screen
+└── navigation/
+    └── types.ts           # Navigation type definitions
+```
+
+## Time Tracking
+**Total Development Time:** 
+
+*Breakdown:*
+- Project Setup: 
+- UI Design: 
+- API Integration: 
+- Error Handling: 
+- Testing: 
 
 ## Getting Started
 
-1. Create a new project using this template:
+### Prerequisites
+- Node.js
+- npm or Yarn
+- Expo CLI
+- Android Studio / Xcode (for simulator)
 
-   ```sh
-   npx create-expo-app@latest --template react-navigation/template
+### Installation
+1. Clone the repository
+2. Install dependencies
    ```
-
-2. Edit the `app.json` file to configure the `name`, `slug`, `scheme` and bundle identifiers (`ios.bundleIdentifier` and `android.bundleIdentifier`) for your app.
-
-3. Edit the `src/App.tsx` file to start working on your app.
-
-## Running the app
-
-- Install the dependencies:
-
-  ```sh
-  npm install
-  ```
-
-- Start the development server:
-
-  ```sh
-  npm start
-  ```
-
-- Build and run iOS and Android development builds:
-
-  ```sh
-  npm run ios
-  # or
-  npm run android
-  ```
-
-- In the terminal running the development server, press `i` to open the iOS simulator, `a` to open the Android device or emulator, or `w` to open the web browser.
-
-## Notes
-
-This project uses a [development build](https://docs.expo.dev/develop/development-builds/introduction/) and cannot be run with [Expo Go](https://expo.dev/go). To run the app with Expo Go, edit the `package.json` file, remove the `expo-dev-client` package and `--dev-client` flag from the `start` script. However, Edge-to-edge won't work on Expo Go.
-
-We highly recommend using the development builds for normal development and testing.
-
-The `ios` and `android` folder are gitignored in the project by default as they are automatically generated during the build process ([Continuous Native Generation](https://docs.expo.dev/workflow/continuous-native-generation/)). This means that you should not edit these folders directly and use [config plugins](https://docs.expo.dev/config-plugins/) instead. However, if you need to edit these folders, you can remove them from the `.gitignore` file so that they are tracked by git.
-
-## Resources
-
-- [React Navigation documentation](https://reactnavigation.org/)
-- [Expo documentation](https://docs.expo.dev/)
-
----
-
-Demo assets are from [lucide.dev](https://lucide.dev/)
+   npm install
+   # or
+   yarn install
+   ```
+3. Run the app
+   ```
+   expo start
+   ```

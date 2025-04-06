@@ -15,7 +15,8 @@
       "adaptiveIcon": {
         "foregroundImage": "./assets/adaptive-icon.png",
         "backgroundColor": "#ffffff"
-      }
+      },
+      "package": "com.himanshu636.github"
     },
     "web": {
       "favicon": "./assets/favicon.png"
@@ -30,6 +31,11 @@
         }
       ],
       "react-native-edge-to-edge"
-    ]
+    ],
+    "extra": {
+      "eas": {
+        "projectId": "a5fad1e3-1dbc-40b9-925f-df2f4974380d"
+      }
+    }
   }
 }
